@@ -1,0 +1,14 @@
+[Unit]
+Description=gRPC SSO
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/apps/sso
+ExecStart=/root/apps/sso/sso --config=/root/apps/sso/config/prod.yaml
+Restart=always
+RestartSec=4
+StandardOutput=inherit
+
+[Install]
+WantedBy=multi-user.target
